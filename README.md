@@ -1,6 +1,9 @@
 Django Node Chat con Login Redes Sociales
 =================
 
+## Entorno
+Python 3.4.1
+
 ## Como usar
 
 Descargamos el repositorio y creamos nuestro entorno virtual, usare virtualenvwrapper:
