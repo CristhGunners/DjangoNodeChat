@@ -38,4 +38,4 @@ Y en la carpeta "nodechat" arrancamos el archivo server.js :
 
     node server
 
-Accedemos a "localhost:8000" y ahora solo queda logearns con nuestras redes sociales y probar el chat.
+Accedemos a "localhost:8000" y ahora solo queda logearnos con nuestras redes sociales y probar el chat.
