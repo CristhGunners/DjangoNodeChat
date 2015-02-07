@@ -1,0 +1,20 @@
+{% extends "systems/base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+	<title>Django NodeJs Chat</title>
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static "css/systems/login.css" %}">
+{% endblock %}
+
+{% block content %}
+	<section class="login">
+			<h1>Django Node Chat</h1>
+			<h2>Chat con login de redes sociales integrando Django y NodeJs.</h2>
+			<a href="{% url 'social:begin' 'facebook' %}" class="facebook"><span class="icon-facebook2"></span> Entrar Con Facebook</a>
+			<a href="{% url 'social:begin' 'twitter' %}" class="twitter"><span class="icon-twitter"></span> Entrar Con Twitter</a>
+	</section>
+{% endblock %}

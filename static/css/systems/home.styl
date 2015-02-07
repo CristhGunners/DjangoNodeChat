@@ -1,0 +1,119 @@
+@import '../base/base'
+
+section.home
+	height 100%
+	padding 2.5em 0
+	text-align center
+	
+	section.my-comment
+		text-align justify
+		width 80%
+		margin 2em auto 0
+		padding 1em
+		
+		article.line
+			width 100%
+			margin 2em 0
+			
+			figure
+				width 5%
+				border-radius 50%
+				margin 0
+				padding 0
+				display inline-block
+				vertical-align middle
+				min-width 35px
+				
+				img
+					width 100%
+					border-radius 50%
+			
+			div.info-comment
+				display inline-block
+				vertical-align middle
+				margin 0 1em
+				padding 0
+				
+				form
+					margin 0
+					padding 0
+					
+					input
+						font-size 1.25em
+						color gray
+						border 0
+						border-bottom 1px solid clearlead
+					
+					button
+						background facebook
+						color white
+						border 0
+						font-size 1em
+						cursor pointer
+						padding 0.25em
+	
+	section.chat
+		width 80%
+		margin 2em auto 0
+		text-align justify
+		//border 1px solid clearlead
+		padding 1em
+		max-height 400px
+		overflow-x auto
+		overflow-y auto
+		
+		article.line
+			width 100%
+			margin 2em 0
+			
+			figure
+				width 6%
+				border-radius 50%
+				margin 0
+				padding 0
+				display inline-block
+				vertical-align middle
+				min-width 45px
+				
+				img
+					width 100%
+					border-radius 50%
+			
+			p
+				display inline-block
+				vertical-align middle
+				margin 0 1em
+				padding 0
+				color gray
+				text-align justify
+			
+			div.info-comment
+				display inline-block
+				vertical-align middle
+				margin 0 1em
+				padding 0
+				
+				h3
+					display block
+					font-size 1em
+					color gray
+					margin 0
+					
+					a
+						text-decoration none
+						color gray
+				
+				div.detail-comment
+					display block
+					margin 0.5em 0
+					
+					label
+						display inline-block
+						vertical-align middle
+						font-size 0.75em
+						margin 0 0.5em
+						color gray
+						
+						span
+							&.icon-clock
+								color twitter

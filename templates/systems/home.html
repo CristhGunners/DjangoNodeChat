@@ -1,0 +1,76 @@
+{% extends "systems/base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}
+	<title>{{user.full_name}} Django NodeJs Chat</title>
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="{% static "css/systems/home.css" %}">
+{% endblock %}
+
+{% block content %}
+	
+	<section class="home">
+		<h3>Mensajes De Hoy {% now "d b , Y" %}</h3>
+		<section id="chat" class="chat">
+			{% for comment in comments %}
+			<article class="line">
+				<figure>
+					<img src="{{comment.user.avatar}}" alt="" />
+				</figure>
+				<div class="info-comment">
+					<h3>{{comment.user.full_name}}</h3>
+					<div class="detail-comment">
+						<label>
+							<span class="icon-clock"></span>
+							 Hoy a las {{comment.creation|date:"H:i:s"}}
+						</label>
+					</div>
+				</div>
+				<p>
+					{{comment.text}}
+				</p>
+			</article>
+			{% endfor %}
+		</section>
+		<section class="my-comment">
+			<article class="line">
+				<figure>
+					<img src="{{user.avatar}}" alt="" />
+				</figure>
+				<div class="info-comment">
+					<form autocomplete="off">
+						{% csrf_token %}
+						{{ form.text }}
+						<button id="send" >Enviar</button>
+					</form>
+				</div>
+			</article>
+		</section>
+	</section>
+
+{% endblock %}
+
+{% block js %}
+	<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io.connect("http://localhost:3000");
+		$("#send").on('click',Comentar);
+
+		function Comentar(e){
+			e.preventDefault();
+			var datos = {
+				"user":"{{user.username}}",
+				"text":$("#id_text").val(),
+			}
+			socket.emit('add comment',datos);
+			$("#id_text").val("");
+		}
+		socket.on('send comments',function(data){
+			var data = JSON.parse(data);
+			$('#chat').prepend("<article class='line'><figure><img src="+data.avatar+" alt='' /></figure><div class='info-comment'><h3>"+data.user+"</h3><div class='detail-comment'><label><span class='icon-clock'></span> Hoy a las "+data.date+"</label></div></div><p>"+data.comment+"</p></article>");
+		});
+	</script>
+{% endblock %}

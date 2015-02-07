@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% block title %}{% endblock %}
+	<link rel="stylesheet" href="{% static "css/icomoon/style.css" %}">
+	{% block css %}{% endblock %}
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="https://github.com/CristhGunners/DjangoNodeChat" target="_blank"><span class="icon-github"></span></a></li>
+				{% if user.is_authenticated %}
+					<li class="right"><a href="{% url 'users:logout' %}"><span class="icon-switch"></span></a></li>
+				{% endif %}
+			</ul>
+		</nav>
+	</header>
+	<section class="content">
+		{% block content %}{% endblock %}
+	</section>
+	<footer>
+		<h3> By @CristhGunners</h3>
+		<nav>
+			<ul>
+				<li><a href="https://twitter.com/CristhGunners" target="_blank"><span class="icon-twitter"></span></a></li>
+				<li><a href="https://plus.google.com/u/0/110479947234895589247/posts" target="_blank"><span class="icon-google-plus2"></span></a></li>
+				<li><a href="https://github.com/CristhGunners/" target="_blank"><span class="icon-github"></span></a></li>
+			</ul>
+		</nav>
+	</footer>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="{% static "js/vendor/flowtype.js" %}"></script>
+	{% block js %}{% endblock %}
+	<script src="{% static "js/base.js" %}"></script>
+</body>
+</html>
