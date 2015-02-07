@@ -2,9 +2,10 @@ Django Node Chat con Login Redes Sociales
 =================
 
 ## Python y NodeJs
-Python 3.4.1
-NodeJs v0.10.24
 
+    Python 3.4.1
+    NodeJs v0.10.24
+    
 ## Como usar
 
 Descargamos el repositorio y creamos nuestro entorno virtual, usare virtualenvwrapper:
