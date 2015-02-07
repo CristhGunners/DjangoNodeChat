@@ -1,8 +1,9 @@
 Django Node Chat con Login Redes Sociales
 =================
 
-## Entorno
+## Python y NodeJs
 Python 3.4.1
+NodeJs v0.10.24
 
 ## Como usar
 
@@ -37,7 +38,7 @@ Ahora solo que arrancar nuestro proyecto :
 
     manage.py runserver
 
-Y en la carpeta "nodechat" arrancamos el archivo server.js :
+Y paralelamente en otra terminal, nos ubicamos en la carpeta "nodechat" para arrancar el archivo server.js :
 
     node server
 
